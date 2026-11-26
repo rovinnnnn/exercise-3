@@ -1,0 +1,10 @@
+{
+  "name": "exercise-3",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node --check server.js && node scripts/build.js",
+    "start": "node dist/server.js",
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,23 @@
+name: Node.js CI
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    container: node:24-bookworm
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Build the application
+        run: npm run build
+
+      - name: Run tests
+        run: npm test
